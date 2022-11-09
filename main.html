@@ -1,0 +1,82 @@
+<!doctype html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <table align="center" border="1" cellpadding="5" cellspacing="5" dir="ltr" width="400px">
+      <tbody> 
+         <tr>
+             <th align="center">
+                <span style="font-family: Arial, sans-serif;">
+                    <span style="color: #000000;">
+                        <span style="font-size: 18px;"> Прогнозное значение параметра
+                            <br> "Соотношение матрица-наполнитель"
+                        </span>
+                    </span>
+                </span>
+            </th> 
+        </tr> 
+      </tbody> 
+    </table>
+</head>
+<body>
+    <style>
+    form {
+        margin: auto;
+         width: 45%;
+    } 
+    .result {
+        margin: auto;
+        width: 45%;
+        border: 1px solid #ccc;
+    }
+    </style>
+    <form action="{{ url_for('main') }}" method="POST">
+        <br>
+        <fieldset>
+             <legend>Введите значения:</legend>
+               Плотность, кг/м3: 
+              <input name="pr1" type="number" required>
+               <br> Модуль упругости, ГПа: 
+               <input name="pr2" type="number" required> 
+               <br> Количество отвердителя, м.%: 
+               <input name="pr3" type="number" required> 
+               <br> Содержание эпоксидных групп,%_2: 
+               <input name="pr4" type="number" required>
+               <br> Температура вспышки, С_2: 
+               <input name="pr5" type="number" required> 
+               <br> Поверхностная плотность, г/м2: 
+               <input name="pr6" type="number" required> 
+               <br> Модуль упругости при растяжении, ГПа: 
+               <input name="pr7" type="number" required>
+               <br> Прочность при растяжении, МПа:
+               <input name="pr8" type="number" required> 
+               <br> Потребление смолы, г/м2: 
+               <input name="pr9" type="number" required> 
+               <br> Угол нашивки, град: 
+               <input name="pr10" type="number" required> 
+               <br> Шаг нашивки: 
+               <input name="pr11" type="number" required> 
+               <br> Плотность нашивки: 
+               <input name="pr12" type="number" required> 
+               <br> 
+               <input type="submit"> 
+            </fieldset>
+        </form> 
+        <div class="result" align="center">
+            {% if result %}
+               <br> <p style="font-size:50px">Результат прогноза:</p> 
+                    <p style="font-size:50px">{{ result }}</p> 
+            {% endif %}
+        </div> 
+        <div>
+            <p style="text-align: center">
+                <span style="color:#000000;">
+                    <span style="font-family: Arial, sans-serif;">
+                        <span class="footer"><em>Приложение разработала Кондрашина Т.А.
+                        </em>
+                    </span>
+                </span> 
+        </span>
+    </p>
+</div>
+</body>
+</html>
